@@ -4,6 +4,7 @@
 % \usepackage[scr]{rsfso}
 % \usepackage{mathptmx}
 \usepackage{relsize, centernot}
+\usepackage{physics}
 
 
 \makeatletter
@@ -41,6 +42,7 @@
 \DeclareMathAlphabet{\family}{OMS}{cmsy}{m}{n}
 
 \undef\natural
+\undef\real
 %% Conjuntos Padrões: R, N, Z, C, Q %%
 \DeclareMathOperator{\real}{\mathbb{R}}
 \DeclareMathOperator{\natural}{\mathbb{N}}
@@ -62,7 +64,7 @@
 \DeclareMathOperator{\grau}{deg}
 
 %% Operadores Delimitados: \abs{\sum_i^j}, x \equiv y \emod{n} %%
-\newcommand{\abs}[1]{{\left\lvert\,#1\,\right\rvert}}
+% \newcommand{\abs}[1]{{\left\lvert\,#1\,\right\rvert}}
 \newcommand{\emod}[1]{\ \left(\mathrm{mod}\ #1\right)}
 
 %% Vérices e Arestas %%

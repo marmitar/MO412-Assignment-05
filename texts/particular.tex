@@ -1,0 +1,30 @@
+\subsection*{Some Particular Solution}
+
+    Since the inhomogeneous part of the differential equation comes from a polynomial ($p(x) = x$), we assume that we can find a polynomial $f(x) = \sum_{i=0}^n a_i x^i$ of degree $n$ that is a solution to the equation:
+    \begin{align*}
+        x &= f' + 2f \\
+        &= \dv{x} \sum_{i=0}^n a_i x^i + 2 \sum_{i=0}^n a_i x^i \\
+        &= \sum_{i=0}^n a_i \dv{x^i}{x} + \sum_{i=0}^n 2 a_i x^i \\
+        &= a_0 \dv{x^0}{x} + \sum_{i=1}^n a_i \cdot i x^{i-1} + \sum_{i=0}^n 2 a_i x^i \\
+        &= 0 + \sum_{i=0}^{n-1} (i+1) a_{i+1} x^i + \sum_{i=0}^{n-1} 2 a_i x^i + 2 a_n x^n \\
+        &= a_n x^n + \sum_{i=0}^{n-1} \left((i+1) a_{i+1} + 2 a_i\right) x^i
+    \end{align*}
+
+    Since this must hold for any $x$, we have the following system:
+    \begin{align}
+        2 a_2 + 2 a_1 &= 1 && \text{when $i = 1$} \label{eq:coef-zero} \\
+        (i+1) a_{i+1} + 2 a_i &= 0 && \text{for $i \ne 1$ and $i \ne n$} \label{eq:coef-nonzero} \\
+        a_n &= 0 && \text{when $i = n$} \label{eq:coef-final}
+    \end{align}
+
+    From equations \eqref{eq:coef-nonzero} and \eqref{eq:coef-final}, we get that $a_i = 0$ for $i \geq 2$, and from \cref{eq:coef-zero} we have:
+    \[
+        a_1 = \frac{1 - 2a_2}{2} = \frac{1}{2}
+    \]
+
+    Applying \cref{eq:coef-nonzero} with $i = 0$ results in:
+    \[
+        a_0 = -\frac{1}{2} a_1 = -\frac{1}{4}
+    \]
+
+    Therefore, our particular solution is $f(x) = \frac{1}{2} x - \frac{1}{4}$.

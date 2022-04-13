@@ -1,0 +1,19 @@
+\subsection*{Homogeneous Solutions}
+
+    To reach our homogeneous solution we must solve the homogeneous equation:
+    \[
+        f' + 2f = 0
+    \]
+
+    Using a common technique called \textit{separation of variables}, we get:
+    \begin{align*}
+        \dv{f}{x} + 2 f &= 0 \\
+        \dv{f}{x} &= -2 f \\
+        \frac{1}{f} \dv{f}{x} &= -2 \\
+        \int \frac{1}{f} \dv{f}{x} \dd{x} &= \int -2 \dd{x} \\
+        \int \frac{1}{f} \dd{f} &= -2 x + C_1 \\
+        \ln f + C_2 &= -2 x + C_1 \\
+        f(x) &= e^{-2x + C_1 - C_2} = C_3 \cdot e^{-2x}
+    \end{align*}
+
+    Therefore, the homogeneous part of the solution is $f(x) = A \exp(-2x)$, for some $A \in \real$.

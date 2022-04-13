@@ -1,0 +1,52 @@
+\section*{Analyzing the Equation}
+
+    First note that the given equation is a \textit{linear differential equation}. That is, given two solutions $f_1(x)$ and $f_2(x)$ to the original equation, their difference $g(x) = f_1(x) - f_2(x)$ follows a \textit{homogeneous differential equation}:
+    \begin{align}
+        g' + 2g &= \left(f_1 - f_2\right)' + 2\left(f_1 - f_2\right) \nonumber\\
+            &= f_1' - f_2' + 2f_1 - 2f_2 \nonumber\\
+            &= \left(f_1' + 2f_1\right) - \left(f_2' - 2f_2\right) \nonumber\\
+            &= x - x \nonumber\\
+            &= 0 \label{eq:homogeneous}
+    \end{align}
+
+    Therefore, we can describe all solutions to the original equation as a combination of a \textit{particular solution} (not restricted to the same initial condition) and a \textit{homogeneous solution}, which is a solution to the equivalent \hyperref[eq:homogeneous]{homogeneous equation (\ref*{eq:homogeneous})}.
+
+\section*{Finding the Solutions}
+
+    \input{texts/particular}
+    \input{texts/homogeneous}
+    \input{texts/general}
+
+\newpage
+
+\section*{Applying the Initial Condition}
+
+    The last step is to find the specific function $f(x)$ that solves both equations. It is now just a matter of applying our constraints to the general solution on \cref{eq:general}.
+    \begin{align*}
+        0 &= f(0) = \frac{A e^{-2 \cdot 0} + 2 \cdot 0 - 1}{4} \\
+        &= \frac{A \cdot 1 - 1}{4} \\
+        &= A - 1
+    \end{align*}
+
+    That is, $A = 1$ and:
+    \[
+        f(x) = \frac{e^{-2x} + 2x - 1}{4}
+    \]
+
+    \subsection*{Verification}
+
+        We can also verify that the differential equation holds:
+        \begin{align*}
+            f' + 2f &= \frac{\dv{x} e^{-2x} + \dv{x} 2x - \dv{x} 1}{4} + 2 \frac{e^{-2x} + 2x - 1}{4} \\
+            &= \frac{-2 e^{-2x} + 2 - 0 + 2 e^{-2x} + 2 \cdot 2x - 2}{4} \\
+            &= \frac{4x}{4} \\
+            &= x
+        \end{align*}
+
+        And the initial condition:
+        \begin{align*}
+            f(0) &= \frac{e^{-2 \cdot 0} + 2 \cdot 0 - 1}{4} \\
+            &= \frac{e^0 - 1}{4} \\
+            &= \frac{1 - 1}{4} \\
+            &= 0
+        \end{align*}
